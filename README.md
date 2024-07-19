@@ -7,11 +7,11 @@ This is a command line application that generates a professional SVG logo.  Logo
 ## Usage
 Enter node index.js in the command line.  You will then be asked to enter 3 characters, the color of the text, to choose from 3 different shapes, and the color of the shape.  Once all questions are answered a SVG file is created with code for a logo based on your answers.
 
-Walkthrough Video: 
+Walkthrough Video: https://drive.google.com/file/d/1E162Gf2XriADM2qtmeSrQMsIML5GbeFU/view
 
 Github Repository: https://github.com/Jhona11/Challenge-10-SVG-Logo-Maker
 
-Sample SVG: 
+Sample SVG: https://github.com/Jhona11/Challenge-10-SVG-Logo-Maker/blob/main/Examples/Circle.svg
 
 ## Credits
 
