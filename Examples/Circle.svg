@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"><circle r="100" cx="150" cy="100" fill="Purple"></circle><text fill= "Orange" font-size="120" x="150" y="128.26171875" text-anchor="middle"><tspan dy="0" x="150" >Jho</tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"><circle cx="150" cy="100" r="75" fill="Orange"></circle><text fill="purple" font-size="100" x="145" y="110" text-anchor="middle"><tspan dy="0" x="150">Dog</tspan></text></svg>

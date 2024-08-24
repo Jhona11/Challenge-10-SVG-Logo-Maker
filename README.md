@@ -11,7 +11,7 @@ Walkthrough Video: https://drive.google.com/file/d/1E162Gf2XriADM2qtmeSrQMsIML5G
 
 Github Repository: https://github.com/Jhona11/Challenge-10-SVG-Logo-Maker
 
-Sample SVG: https://github.com/Jhona11/Challenge-10-SVG-Logo-Maker/blob/main/Examples/Circle.svg
+Sample SVG: https://github.com/Jhona11/Challenge-10-SVG-Logo-Maker/blob/main/Examples/circle.svg
 
 ## Credits
 

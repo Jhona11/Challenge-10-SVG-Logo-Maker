@@ -1,74 +1,71 @@
-const inquirer = require ("inquirer"); // npm install --save inquirer@^8.0.0
-const fs =require('fs');
+const inquirer = require("inquirer"); // npm install --save inquirer@^8.0.0
+const fs = require('fs');
 const { Circle, Square, Triangle } = require('./lib/shapes.js');
 
-const questions =[
+const questions = [
     {
         type: 'input',
         name: 'text',
         message: 'Enter up to 3 characters',
         validate(value) {
-            if(value.lenght > 3){
-                return 'Please enter only 3 characters';
-            }    
-           else {
+            if (value.length > 3) {
+                return 'Please enter at most 3 characters';
+            }
+            else {
                 return true;
-           }
+            }
         }
     },
     {
-        type:'input', 
-        name:'textColor',
-        message:'inter text color',
+        type: 'input',
+        name: 'textC',
+        message: 'Enter a color for the text (color keyword or hexadecimal number)'
     },
     {
-        type:'list',
-        name:'shape',
-        message:'Select shape',
-        choices:['circle', 'square', 'triangle']
+        type: 'list',
+        name: 'shape',
+        message: 'Select a shape',
+        choices: ['square', 'circle', 'triangle']
     },
     {
         type: 'input',
-        name: 'shapeColor',
-        message: 'Enter shape color (color keyword or hexadecimal number)'
-    }        
+        name: 'shapeC',
+        message: 'Enter a color for the shape (color keyword or hexadecimal number)'
+    }
 ];
 
-function createSVG(data) {
-    let svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">';
+function createSVGTags(answers) {
+    let svgtags = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">';
 
     let shape;
-    switch(data.shape) {
-        case 'circle':
-            shape = new Circle(data.shapeColor);
-            break;
+    switch (answers.shape) {
         case 'square':
-            shape = new Square(data.shapeColor);
+            shape = new Square(answers.shapeC);
+            break;
+        case 'circle':
+            shape = new Circle(answers.shapeC);
             break;
         case 'triangle':
-            shape = new Triangle(data.shapeColor);
+            shape = new Triangle(answers.shapeC);
             break;
     }
-    svg += shape.render();
-    
-    svg += `<text fill= "${data.textColor}" font-size="120" x="150" y="128.26171875" text-anchor="middle"><tspan dy="0" x="150" >${data.text}</tspan></text>`;
+    svgtags += shape.render();
 
-    svg += '</svg>';
+    svgtags += `<text fill="${answers.textC}" font-size="100" x="145" y="110" text-anchor="middle"><tspan dy="0" x="150">${answers.text}</tspan></text></svg>`;
 
-    fs.writeFileSync('examples/logo.svg', svg);
-    console.log("Generated logo.svg");
+    fs.writeFileSync('examples/logo.svg', svgtags);
+    console.log("Generated logo.svg in the examples folder");
 }
-
 
 function init() {
     inquirer.prompt(questions)
         .then((answers) => {
             console.log(answers);
-            createSVG(answers);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+            createSVGTags(answers);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 init();
